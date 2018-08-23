@@ -64,8 +64,7 @@
                         <th scope="col">課名</th>
                         <th scope="col">上課時間</th>
                         <th scope="col">老師</th>
-                        <th scope="col">人數上限</th>
-                        <th scope="col">當前人數</th>
+                        <th scope="col">當前狀態</th>
                         <th scope="col">還有多久解鎖</th>
                     </tr>
                 </thead>
@@ -74,8 +73,7 @@
                         <th scope="row">{{ key }}</th>
                         <td>{{ item.time }}</td>
                         <td>{{ item.teacher }}</td>
-                        <td>{{ item.limit }}</td>
-                        <td>{{ item.seleced_no }}</td>
+                        <td>{{ item.seleced_no }}/{{ item.limit }}</td>
                         <td>{{ (item.lock == true) ? Math.floor(360-(Date.now() - parseInt(item.startTime))/1000/60) : 0}} 分鐘</td>
                     </tr>
                 </tbody>
