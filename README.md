@@ -5,6 +5,13 @@
 ## View
 https://hbdoy.github.io/ncnu-class-info/
 
+### Look like
+![](https://i.imgur.com/FsqFA5y.png)
+
+![](https://i.imgur.com/tqzX4fw.png)
+
+![](https://i.imgur.com/r5OGPco.png)
+
 ## 關於本系統
 由於校務系統選課新制度，為了杜絕買賣行為，在滿課的狀態下若有人退選，所有釋出的名額將會被鎖 6hr 後才能重新加選。
 
