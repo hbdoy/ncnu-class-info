@@ -29,7 +29,7 @@ var app = new Vue({
                 var tmp = {};
                 for (var key in allClass_tmp) {
                     if (allClass_tmp.hasOwnProperty(key)) {
-                        if(key.indexOf(this.filterText) != -1){
+                        if((key.toUpperCase()).indexOf((this.filterText).toUpperCase()) != -1){
                             tmp[key] = allClass_tmp[key];
                         }
                     }
