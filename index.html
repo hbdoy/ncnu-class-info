@@ -15,15 +15,38 @@
 <body>
     <div class="container p-3" id="app">
         <h2>暨大課程資訊查詢</h2>
-        <div class="bg-info text-white p-3 mb-3">
-            1. 資料大約 8/23 PM 23:30 後會比較準確
-            <br>
-            2. 目前支援通識及特色運動查詢
+        <button class="btn btn-primary mb-2" type="button" data-toggle="collapse" data-target="#explainText" aria-expanded="false" aria-controls="explainText">
+            系統說明
+        </button>
+        <div class="collapse my-2" id="explainText">
+            <div class="bg-info text-white p-3 mb-3 card">
+                1. 資料大約 8/23 23:30 後會比較準確
+                <br>
+                2. 目前支援通識及特色運動查詢
+                <br>
+                3. 本網頁僅是在練習寫網頁(?，本人不負使用者後續所產生的任何行為責任
+                <br>
+                4. 發現任何程式問題都可以回報，或是發 PR、issue 給我
+                <br>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5>想幫助我嗎?</h5>
+                    若是課程時間不準(8/23 23:30 後)，可以提供
+                    1. 課程名稱
+                    2. 當下時間
+                    3. 剩餘幾分鐘解鎖
+                    我收到後將會更新
+                </div>
+            </div>
         </div>
-        <select class="mb-3" v-model="chosenClass">
-            <option value="other" selected>通識</option>
-            <option value="sport">特色運動</option>
-        </select>
+        <div class="d-flex">
+            <h5>切換課程</h5>
+            <select class="mb-3 ml-3" v-model="chosenClass">
+                <option value="other" selected>通識</option>
+                <option value="sport">特色運動</option>
+            </select>
+        </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text">搜尋關鍵字</span>
@@ -56,7 +79,9 @@
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
     <script src="https://www.gstatic.com/firebasejs/5.4.0/firebase.js"></script>
     <script>
         // Initialize Firebase
