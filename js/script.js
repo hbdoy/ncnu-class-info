@@ -29,12 +29,39 @@ var app = new Vue({
                 var tmp = {};
                 for (var key in allClass_tmp) {
                     if (allClass_tmp.hasOwnProperty(key)) {
-                        if((key.toUpperCase()).indexOf((this.filterText).toUpperCase()) != -1){
+                        if ((key.toUpperCase()).indexOf((this.filterText).toUpperCase()) != -1) {
                             tmp[key] = allClass_tmp[key];
                         }
                     }
                 }
                 return tmp;
+            }
+        }
+    }
+});
+
+Vue.component('counter', {
+    data: function () {
+        return {
+            time: this.item.startTime,
+            lock: this.item.lock,
+            now: Date.now(),
+            timer: ""
+        }
+    },
+    created() {
+        this.myTimer();
+    },
+    props: ['item'],
+    template: `
+    <td>{{ (lock == true) ? Math.floor(360-(now - parseInt(time))/1000/60) : 0}} 分鐘</td>
+    `,
+    methods: {
+        myTimer: function () {
+            clearInterval(this.timer);
+            if (this.lock) {
+                this.now += 1000;
+                this.timer = setInterval(this.myTimer, 1000);
             }
         }
     }

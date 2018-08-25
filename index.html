@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="ncnu.gif"">
+    <link rel="shortcut icon" href="ncnu.gif">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>暨大課程資訊</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
@@ -75,12 +75,12 @@
                     </tr>
                 </thead>
                 <tbody v-cloak>
-                    <tr v-for="(item, key) in myClass">
+                    <tr v-for="(item, key) in myClass" :key="key">
                         <th scope="row">{{ key }}</th>
                         <td>{{ item.time }}</td>
                         <td>{{ item.teacher }}</td>
                         <td>{{ item.seleced_no }}/{{ item.limit }}</td>
-                        <td>{{ (item.lock == true) ? Math.floor(360-(Date.now() - parseInt(item.startTime))/1000/60) : 0}} 分鐘</td>
+                        <td is="counter" :item="item"></td>
                     </tr>
                 </tbody>
             </table>
